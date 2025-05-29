@@ -1,0 +1,28 @@
+.search{
+    width: 600px;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border:solid 2px white;
+    margin-bottom: 10px;
+}
+
+.notes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.box{
+    border: solid 2px white;
+    margin:5px;
+}
+
+.buttons{
+    display:flex;
+    flex-direction:row;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    margin:10px;
+    font-size:0.8em;
+}

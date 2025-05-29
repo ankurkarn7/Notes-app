@@ -1,0 +1,23 @@
+.title{
+    border-radius: 8px;
+    padding : 3px;
+    border : 3px;
+    gap: 20px;
+    padding : 5px;
+    font-size:1.3em;
+}
+
+.type{
+    display: flex;
+    flex-direction: row;
+    place-content: space-between;
+    gap: 20px;
+    padding: 5px;
+    margin-top:10px;
+}
+
+.content{
+    min-width: 100%;
+    border-radius:10px;
+    margin-top:20px;
+}
