@@ -19,7 +19,7 @@ const Pastes = () => {
 
   function handleCopy(content){
     navigator.clipboard.writeText(content);
-    toast.success('copied to clipboard');
+    toast.success('copied to clipboard', {duration:1000});
   }
 
   return (

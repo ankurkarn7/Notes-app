@@ -16,7 +16,7 @@ export const pasteSlice = createSlice({
       const paste = action.payload;
       state.pastes.push(paste);
       localStorage.setItem("pastes", JSON.stringify(state.pastes));
-      toast("NOTE created successfully");
+      toast.success("NOTE created successfully", {duration:1000});
     },
     updateToPastes: (state, action) => {
       const paste = action.payload;
@@ -26,7 +26,7 @@ export const pasteSlice = createSlice({
         state.pastes[index] = paste;
         localStorage.setItem("pastes", JSON.stringify(state.pastes));
 
-        toast.success("Paste updated");
+        toast.success("Paste updated", {duration:1000});
       }
     },
     resetAllPastes: (state, action) => {
