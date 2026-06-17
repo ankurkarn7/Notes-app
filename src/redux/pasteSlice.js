@@ -16,17 +16,27 @@ export const pasteSlice = createSlice({
       const paste = action.payload;
       state.pastes.push(paste);
       localStorage.setItem("pastes", JSON.stringify(state.pastes));
-      toast.success("NOTE created successfully", {duration:1000});
+      toast.success("Note created successfully", {duration:1500});
     },
     updateToPastes: (state, action) => {
       const paste = action.payload;
       const index = state.pastes.findIndex((item) => item._id === paste._id);
 
       if(index >= 0){
-        state.pastes[index] = paste;
+        state.pastes[index] = { ...state.pastes[index], ...paste };
         localStorage.setItem("pastes", JSON.stringify(state.pastes));
 
-        toast.success("Paste updated", {duration:1000});
+        toast.success("Note updated", {duration:1500});
+      }
+    },
+    togglePin: (state, action) => {
+      const pasteId = action.payload;
+      const index = state.pastes.findIndex((item) => item._id === pasteId);
+
+      if(index >= 0){
+        state.pastes[index].pinned = !state.pastes[index].pinned;
+        localStorage.setItem("pastes", JSON.stringify(state.pastes));
+        toast.success(state.pastes[index].pinned ? "Note pinned" : "Note unpinned", {duration:1500});
       }
     },
     resetAllPastes: (state, action) => {
@@ -42,13 +52,13 @@ export const pasteSlice = createSlice({
         state.pastes.splice(index, 1);
         localStorage.setItem("pastes", JSON.stringify(state.pastes));
 
-        toast.success("Paste deleted");
+        toast.success("Note deleted", {duration:1500});
       }
     },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { addToPastes, updateToPastes, resetAllPastes, removeFromPastes } = pasteSlice.actions
+export const { addToPastes, updateToPastes, resetAllPastes, removeFromPastes, togglePin } = pasteSlice.actions
 
 export default pasteSlice.reducer

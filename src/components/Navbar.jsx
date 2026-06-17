@@ -1,17 +1,36 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navbarc.css';
+import { useTheme } from '../utils/useTheme';
 
 const Navbar = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div className='Navbar'>
-      <NavLink to='/'>
-        Home
+    <header className='navbar'>
+      <NavLink to='/' className='brand'>
+        <span className='brand-mark'>✺</span>
+        <span className='brand-name'>Notes</span>
       </NavLink>
-      <NavLink to='/pastes'>
-        Notes
-      </NavLink>
-    </div>
+
+      <nav className='nav-links'>
+        <NavLink to='/' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} end>
+          New
+        </NavLink>
+        <NavLink to='/pastes' className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+          My Notes
+        </NavLink>
+      </nav>
+
+      <button
+        className='theme-toggle'
+        onClick={toggleTheme}
+        aria-label='Toggle theme'
+        title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+      >
+        {theme === 'dark' ? '☀️' : '🌙'}
+      </button>
+    </header>
   )
 }
 

@@ -1,23 +1,98 @@
-.title{
-    border-radius: 8px;
-    padding : 3px;
-    border : 3px;
-    gap: 20px;
-    padding : 5px;
-    font-size:1.3em;
+.editor-head {
+  margin-bottom: 18px;
 }
 
-.type{
-    display: flex;
-    flex-direction: row;
-    place-content: space-between;
-    gap: 20px;
-    padding: 5px;
-    margin-top:10px;
+.editor-heading {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 4px;
 }
 
-.content{
-    min-width: 100%;
-    border-radius:10px;
-    margin-top:20px;
+.editor-sub {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.editor-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-input {
+  border: none;
+  background: transparent;
+  padding: 14px 14px 10px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  outline: none;
+}
+
+.content-input {
+  border: none;
+  background: transparent;
+  padding: 4px 14px 14px;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  resize: vertical;
+  min-height: 280px;
+  outline: none;
+}
+
+.editor-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--border);
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.counter .dot {
+  opacity: 0.5;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px var(--accent-soft);
+}
+
+.btn-ghost {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+.btn-ghost:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
 }
